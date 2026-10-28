@@ -1,0 +1,356 @@
+
+/* ตั้งค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.8;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #0f172a, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #ede9fe;
+}
+
+/* Navigation */
+
+/* แถบเมนู */
+.navbar {
+    background-color: #1e293b;
+    padding: 12px 20px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ปุ่มสามขีด */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-radius: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* เปลี่ยนสามขีดเป็นเครื่องหมาย X */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* แถบเมนูติดมุมขวาบนตลอด */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* ปุ่มสามขีด */
+.menu-toggle {
+    background-color: #1e293b;
+    border: 2px solid #475569;
+    cursor: pointer;
+    padding: 10px;
+    width: 50px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 12px #00000030;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* เปลี่ยนสามขีดเป็น X */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* กล่องเมนูที่เปิดออกมา */
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    width: 220px;
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px #00000035;
+}
+
+.nav-menu.show {
+    display: block;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 13px 18px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #334155;
+    transition: background-color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: #7c3aed;
+}
+
+.nav-menu a:last-child {
+    border-bottom: none;
+}
+
+
+
+/* เมนูของหน้าปัจจุบัน */
+nav a.active {
+    background-color: #7c3aed;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #ede9fe, #f5f3ff);
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.profile-icon {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    color: #6d28d9;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    margin-bottom: 12px;
+}
+
+/* ปุ่ม */
+.button {
+    display: inline-block;
+    background-color: #7c3aed;
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #5b21b6;
+}
+
+/* กล่องเนื้อหา */
+.content {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #0000000d;
+}
+
+.content h2 {
+    color: #6d28d9;
+    margin-bottom: 15px;
+    border-left: 5px solid #7c3aed;
+    padding-left: 12px;
+}
+
+/* การ์ด */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f5f3ff;
+    padding: 22px;
+    border-radius: 10px;
+    border-bottom: 4px solid #7c3aed;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #00000015;
+}
+
+.card h3 {
+    color: #5b21b6;
+    margin-bottom: 10px;
+}
+
+.card a {
+    display: inline-block;
+    color: #6d28d9;
+    text-decoration: none;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+}
+
+footer p {
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+/* รองรับโทรศัพท์มือถือ */
+@media (max-width: 700px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 15px 12px;
+    }
+
+    .content {
+        padding: 18px;
+    }
+}
+
+/* รูปโปรไฟล์ */
+.profile-photo {
+    display: block;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px #00000025;
+    margin: 0 auto 20px;
+}
+
+/* จัดรูปและข้อมูลให้อยู่กึ่งกลาง */
+.profile-section {
+    text-align: center;
+}
+
+.profile-section h2 {
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .nav-menu {
+        width: 200px;
+    }
+}
+

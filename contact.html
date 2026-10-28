@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อฉัน | My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>ติดต่อฉัน</h1>
+        <p>Contact Me</p>
+    </header>
+
+    
+<nav class="navbar">
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="เปิดเมนู"
+            aria-expanded="false"
+            aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับฉัน</a>
+        <a href="hobby.html">งานอดิเรก</a>
+        <a href="contact.html">ติดต่อฉัน</a>
+    </div>
+</nav>
+
+
+    <main>
+        <section class="hero">
+            <div class="profile-icon">📬</div>
+            <h2>ยินดีที่ได้รู้จัก!</h2>
+            <p>
+                หากต้องการพูดคุย แลกเปลี่ยนความรู้
+                หรือสอบถามข้อมูล สามารถติดต่อฉันได้
+            </p>
+        </section>
+
+        <section class="content">
+            <h2>ช่องทางการติดต่อ</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>📧 อีเมล</h3>
+                    <p>sr93xd2000@gmail.com</p>
+                </div>
+
+                <div class="card">
+                    <h3>📘 Facebook </h3>
+                    <p>https://www.facebook.
+                        com/share/ 16K33dN1pkG/</p>
+                </div>
+
+                <div class="card">
+                    <h3>📱 โทรศัพท์</h3>
+                    <p>082 225 06079</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>ข้อความถึงผู้เข้าชม</h2>
+            <p>
+                ขอบคุณที่เข้ามาเยี่ยมชมเว็บไซต์แนะนำตนเองของฉัน
+                หวังว่าคุณจะได้รู้จักฉันมากขึ้น
+                และขอบคุณที่สละเวลาเข้ามาเยี่ยมชม
+            </p>
+        </section>
+
+        <a href="index.html" class="button">← กลับหน้าหลัก</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 อรรถพล ประพันธ์</p>
+        <p>จัดทำขึ้นเพื่อประกอบการศึกษา</p>
+    </footer>
+    
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navMenu.classList.toggle("show");
+
+        menuToggle.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "ปิดเมนู" : "เปิดเมนู"
+        );
+    });
+
+    // ปิดเมนูเมื่อคลิกลิงก์
+    navMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        });
+    });
+
+    // ปิดเมนูเมื่อคลิกพื้นที่อื่น
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".navbar")) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        }
+    });
+</script>
+</body>
+</html>
+
+
+</body>
+</html>

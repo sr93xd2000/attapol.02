@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าหลัก | My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>เว็บไซต์แนะนำตนเอง</h1>
+        <p>Welcome to My Personal Website</p>
+    </header>
+
+    
+<nav class="navbar">
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="เปิดเมนู"
+            aria-expanded="false"
+            aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับฉัน</a>
+        <a href="hobby.html">งานอดิเรก</a>
+        <a href="contact.html">ติดต่อฉัน</a>
+    </div>
+</nav>
+
+
+    <main>
+       
+<section class="hero">
+    <img src="10839.jpg"
+         alt="รูปถ่ายของฉัน"
+         class="profile-photo">
+
+    <h2>สวัสดีครับ ยินดีต้อนรับ!</h2>
+    <p>ผมชื่อ อรรภพล </p>
+    <p>ยินดีต้อนรับเข้าสู่เว็บไซต์แนะนำตัวของผม</p>
+
+    <a href="about.html" class="button">
+        รู้จักฉันมากขึ้น →
+    </a>
+</section>
+
+        <section class="content">
+            <h2>เว็บไซต์นี้มีอะไรบ้าง?</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>👨‍🎓 เกี่ยวกับฉัน</h3>
+                    <p>ทำความรู้จักข้อมูลส่วนตัวและการศึกษา</p>
+                    <a href="about.html">อ่านเพิ่มเติม →</a>
+                </div>
+
+                <div class="card">
+                    <h3>🎮 งานอดิเรก</h3>
+                    <p>พบกับกิจกรรมที่ฉันชอบและสิ่งที่สนใจ</p>
+                    <a href="hobby.html">อ่านเพิ่มเติม →</a>
+                </div>
+
+                <div class="card">
+                    <h3>📧 ติดต่อฉัน</h3>
+                    <p>ช่องทางสำหรับติดต่อและพูดคุยกับฉัน</p>
+                    <a href="contact.html">อ่านเพิ่มเติม →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 อรรถพล ประพันธ์</p>
+        <p>จัดทำขึ้นเพื่อประกอบการศึกษา</p>
+    </footer>
+    
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navMenu.classList.toggle("show");
+
+        menuToggle.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "ปิดเมนู" : "เปิดเมนู"
+        );
+    });
+
+    // ปิดเมนูเมื่อคลิกลิงก์
+    navMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        });
+    });
+
+    // ปิดเมนูเมื่อคลิกพื้นที่อื่น
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".navbar")) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        }
+    });
+</script>
+</body>
+</html>
+
+
+</body>
+</html>

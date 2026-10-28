@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>งานอดิเรก | My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>งานอดิเรกของฉัน</h1>
+        <p>My Hobbies and Interests</p>
+    </header>
+
+    
+<nav class="navbar">
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="เปิดเมนู"
+            aria-expanded="false"
+            aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับฉัน</a>
+        <a href="hobby.html">งานอดิเรก</a>
+        <a href="contact.html">ติดต่อฉัน</a>
+    </div>
+</nav>
+
+
+    <main>
+        <section class="hero">
+            <h2>กิจกรรมยามว่าง</h2>
+            <p>สิ่งที่ฉันชอบทำเมื่อมีเวลาว่าง</p>
+        </section>
+
+        <section class="content">
+            <h2>งานอดิเรกที่ฉันชอบ</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🎮 เล่นเกม</h3>
+                    <p>
+                        ฉันชอบเล่นเกมเพื่อความสนุก
+                        และฝึกการคิดวิเคราะห์กับการแก้ปัญหา
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>💻 เรียนรู้คอมพิวเตอร์</h3>
+                    <p>
+                        ฉันสนใจการเขียนโปรแกรม
+                        การสร้างเว็บไซต์ และเทคโนโลยีใหม่ ๆ
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎵 ฟังเพลง</h3>
+                    <p>
+                        ฉันชอบฟังเพลงในเวลาว่าง
+                        เพื่อผ่อนคลายและเพิ่มความเพลิดเพลิน
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎬 ดูหนัง</h3>
+                    <p>
+                        ฉันชอบดูหนังและความบันเทิง
+                        เพื่อพักผ่อนหลังจากเรียน
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📱 ติดตามเทคโนโลยี</h3>
+                    <p>
+                        ฉันชอบติดตามข่าวสารและนวัตกรรม
+                        ที่เกี่ยวข้องกับโลกดิจิทัล
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>📖 ศึกษาความรู้ใหม่</h3>
+                    <p>
+                        ฉันชอบค้นคว้าความรู้เพิ่มเติม
+                        เพื่อนำไปใช้ในการเรียนและชีวิตประจำวัน
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>สิ่งที่ฉันอยากพัฒนา</h2>
+            <p>
+                ฉันต้องการพัฒนาทักษะการเขียนโปรแกรม
+                การออกแบบเว็บไซต์ และการใช้เทคโนโลยี
+                เพื่อสร้างผลงานที่มีประโยชน์ในอนาคต
+            </p>
+        </section>
+
+        <a href="contact.html" class="button">ติดต่อฉัน →</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 อรรถพล ประพันธ์</p>
+        <p>จัดทำขึ้นเพื่อประกอบการศึกษา</p>
+    </footer>
+    
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navMenu.classList.toggle("show");
+
+        menuToggle.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "ปิดเมนู" : "เปิดเมนู"
+        );
+    });
+
+    // ปิดเมนูเมื่อคลิกลิงก์
+    navMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        });
+    });
+
+    // ปิดเมนูเมื่อคลิกพื้นที่อื่น
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".navbar")) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        }
+    });
+</script>
+</body>
+</html>
+
+
+</body>
+</html>

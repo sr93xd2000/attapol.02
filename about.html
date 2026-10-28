@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับฉัน | My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>เกี่ยวกับฉัน</h1>
+        <p>About Me</p>
+    </header>
+
+    
+<nav class="navbar">
+    <button class="menu-toggle"
+            id="menuToggle"
+            aria-label="เปิดเมนู"
+            aria-expanded="false"
+            aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับฉัน</a>
+        <a href="hobby.html">งานอดิเรก</a>
+        <a href="contact.html">ติดต่อฉัน</a>
+    </div>
+</nav>
+
+
+    <main>
+        <section class="content">
+             <img src="10839.jpg"
+         alt="รูปถ่ายของฉัน"
+         class="profile-photo">
+
+            <h2>ข้อมูลส่วนตัว</h2>
+            <p><strong>ชื่อ-นามสกุล:</strong> นายอรรถพล ประพันธ์</p>
+            <p><strong>ชื่อเล่น:</strong> แฟรงค์</p>
+            <p><strong>อายุ:</strong> 16 ปี</p>
+            <p><strong>สถานศึกษา:</strong> วิทยาลัยการอาชีพศรีสะเกษ</p>
+            <p><strong>แผนกวิชา:</strong> เทคโนโลยีสารสนเทศ</p>
+        </section>
+
+        <section class="content">
+            <h2>ประวัติของฉัน</h2>
+            <p>
+                ฉันเป็นนักเรียนที่สนใจด้านเทคโนโลยีสารสนเทศ
+                ชอบเรียนรู้สิ่งใหม่ ๆ และต้องการพัฒนาความรู้
+                ความสามารถของตนเองอยู่เสมอ
+            </p>
+        </section>
+
+        <section class="content">
+            <h2>จุดเด่นของฉัน</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>📚 รักการเรียนรู้</h3>
+                    <p>พร้อมเรียนรู้และพัฒนาตนเอง</p>
+                </div>
+                <div class="card">
+                    <h3>💡 ความคิดสร้างสรรค์</h3>
+                    <p>ชอบคิดและทดลองทำสิ่งใหม่ ๆ</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 การทำงานร่วมกัน</h3>
+                    <p>พร้อมแลกเปลี่ยนความรู้กับผู้อื่น</p>
+                </div>
+            </div>
+        </section>
+
+        <a href="hobby.html" class="button">ดูงานอดิเรกของฉัน →</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 อรรถพล ประพันธ์</p>
+        <p>จัดทำขึ้นเพื่อประกอบการศึกษา</p>
+    </footer>
+    
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navMenu.classList.toggle("show");
+
+        menuToggle.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "ปิดเมนู" : "เปิดเมนู"
+        );
+    });
+
+    // ปิดเมนูเมื่อคลิกลิงก์
+    navMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        });
+    });
+
+    // ปิดเมนูเมื่อคลิกพื้นที่อื่น
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".navbar")) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "เปิดเมนู");
+        }
+    });
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
